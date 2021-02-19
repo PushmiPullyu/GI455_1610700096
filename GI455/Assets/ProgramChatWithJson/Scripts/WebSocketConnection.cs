@@ -275,6 +275,8 @@ namespace ChatWebSocketWithJson
                         OnLeaveRoom(receiveMessageData);
                 }
 
+                ErrorCheck(receiveMessageData);
+
                 tempMessageString = "";
             }
         }
@@ -285,9 +287,9 @@ namespace ChatWebSocketWithJson
 
             tempMessageString = messageEventArgs.Data;
 
-            SocketEvent se = JsonUtility.FromJson<SocketEvent>(tempMessageString);
+            //SocketEvent se = JsonUtility.FromJson<SocketEvent>(tempMessageString);
 
-            ErrorCheck(se);
+            //ErrorCheck(se);
         }
     }
 }
